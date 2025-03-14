@@ -1,6 +1,6 @@
 class MultiplicationController < ApplicationController
   def new
-    render "new"
+    render "multiplication/new"
   end
 
   def compute
@@ -8,6 +8,6 @@ class MultiplicationController < ApplicationController
     @second_num = params[:second_num].to_f
     @result = @first_num * @second_num
 
-    render "compute"
+    render "multiplication/compute"
   end
 end

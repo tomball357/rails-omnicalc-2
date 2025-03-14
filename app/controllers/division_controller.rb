@@ -1,6 +1,6 @@
 class DivisionController < ApplicationController
   def new
-    render "new"
+    render "division/new"
   end
 
   def compute
@@ -8,6 +8,6 @@ class DivisionController < ApplicationController
     @second_num = params[:second_num].to_f
     @result = @second_num.zero? ? "Error: Division by zero" : (@first_num / @second_num)
 
-    render "compute"
+    render "division/compute"
   end
 end

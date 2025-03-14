@@ -1,6 +1,6 @@
 class SubtractionController < ApplicationController
   def new
-    render "new"
+    render "subtraction/new"
   end
 
   def compute
@@ -8,6 +8,6 @@ class SubtractionController < ApplicationController
     @second_num = params[:second_num].to_f
     @result = @second_num - @first_num
 
-    render "compute"
+    render "subtraction/compute"
   end
 end
