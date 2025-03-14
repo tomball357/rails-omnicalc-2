@@ -1,6 +1,6 @@
 class AdditionController < ApplicationController
   def new
-    render "new"
+    render "addition/new"
   end
 
   def compute
@@ -8,6 +8,6 @@ class AdditionController < ApplicationController
     @second_num = params[:second_num].to_f
     @sum = @first_num + @second_num
 
-    render "compute"
+    render "addition/compute"
   end
 end
