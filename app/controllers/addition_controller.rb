@@ -1,15 +1,13 @@
 class AdditionController < ApplicationController
-  def show_addition_form
-    render({ :template => "addition_templates/add_form" })
+  def new
+    render "new"
   end
 
-  def add_these
-    @first_number = params.fetch("first_number").to_f
-    @second_number = params.fetch("second_num").to_f
+  def compute
+    @first_num = params[:first_num].to_f
+    @second_num = params[:second_num].to_f
+    @sum = @first_num + @second_num
 
-    @result = @first_number + @second_number
-
-
-    render({ :template => "addition_template/add_results" })
+    render "compute"
   end
 end

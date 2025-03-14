@@ -1,14 +1,13 @@
 class DivisionController < ApplicationController
-  def show_division_form
-    render({ :template => "division_templates/division_form" })
+  def new
+    render "new"
   end
 
-  def divide_these
-    @first_number = params.fetch("first_num")
-    @second_number = params.fetch("second_num").to_f
+  def compute
+    @first_num = params[:first_num].to_f
+    @second_num = params[:second_num].to_f
+    @result = @second_num.zero? ? "Error: Division by zero" : (@first_num / @second_num)
 
-    @result =  first_number / @second_number
-
-    render({ :template => "division_templates/divide_result" })
+    render "compute"
   end
 end
